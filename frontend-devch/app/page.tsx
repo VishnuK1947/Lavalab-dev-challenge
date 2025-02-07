@@ -2,7 +2,6 @@
 
 import { Sidebar } from '@/components/sidebar';
 import { ProductList } from '@/components/product-list';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function InventoryPage() {
   return (
