@@ -1,12 +1,12 @@
 import type React from 'react';
 
-export interface Product {
+export type Product = {
   id: string;
   name: string;
-  color: 'red' | 'black' | 'white';
-  size: 'S' | 'M' | 'L';
+  color: 'white' | 'red' | 'black' | 'green' | 'blue';
+  size: 'XS' | 'S' | 'M' | 'L' | 'XL';
   quantity: number;
-}
+};
 
 export interface SidebarItem {
   icon: React.ComponentType;
