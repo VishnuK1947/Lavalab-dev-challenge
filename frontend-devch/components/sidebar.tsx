@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { usePathname } from 'next/navigation';
 
 const navigationItems = [
   {
@@ -69,6 +70,7 @@ const navigationItems = [
 
 export function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div
@@ -102,17 +104,23 @@ export function Sidebar() {
               className={cn(
                 'flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-gray-50 transition-colors mb-1',
                 !isExpanded && 'justify-center',
-                item.href === '/' && 'bg-indigo-50 text-indigo-600'
+                pathname === item.href && 'bg-indigo-50 text-indigo-600'
               )}
             >
-              <span className="w-4 h-4 shrink-0">{item.icon}</span>
+              <span
+                className={cn(
+                  'w-4 h-4 shrink-0',
+                  pathname === item.href && '[&_path]:stroke-indigo-600'
+                )}
+              >
+                {item.icon}
+              </span>
               {isExpanded && (
                 <span className="transition-opacity duration-300">
                   {item.label}
                 </span>
               )}
             </Link>
-            {/* Add divider after Fulfillment (index 2) */}
             {index === 2 && (
               <div className="mx-3 my-2 border-t border-gray-200"></div>
             )}

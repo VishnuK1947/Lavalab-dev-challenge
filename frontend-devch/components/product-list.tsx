@@ -208,7 +208,7 @@ export function ProductList() {
       </div>
 
       {/* Rest of the ProductList component */}
-      <div className="bg-white rounded-lg border shadow-sm p-6">
+      <div className="rounded-lg border shadow-sm p-6">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <Input

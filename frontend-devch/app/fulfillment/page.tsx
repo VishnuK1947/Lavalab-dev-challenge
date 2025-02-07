@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Sidebar } from '@/components/sidebar';
 
 export const metadata: Metadata = {
   title: 'Fulfillment | Inventory Management',
@@ -7,13 +8,16 @@ export const metadata: Metadata = {
 
 export default function FulfillmentPage() {
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Fulfillment</h1>
-      <p className="text-gray-600">
-        This is a mock page for managing order fulfillment. Here you would
-        typically see a list of orders that need to be fulfilled, with options
-        to update order status and manage shipping.
-      </p>
+    <div className="flex min-h-screen">
+      <Sidebar />
+      <div className="p-6">
+        <h1 className="text-2xl font-bold mb-4">Fulfillment</h1>
+        <p className="text-gray-600">
+          This is a mock page for managing order fulfillment. Here you would
+          typically see a list of orders that need to be fulfilled, with options
+          to update order status and manage shipping.
+        </p>
+      </div>
     </div>
   );
 }
